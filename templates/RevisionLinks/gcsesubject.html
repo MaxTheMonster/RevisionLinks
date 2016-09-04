@@ -1,0 +1,12 @@
+<h1>GCSE {{ subject }}</h1>
+
+{% if error %}
+    <h4>{{ error }}</h4>
+{% else %}
+    {% for resource in resources %}
+        <div class="resource">
+            <a href="{{ resource.url }}">{{ resource.name }}</a>
+            <p>{{ resource.description }}</p>
+        </div>
+    {% endfor %}
+{% endif %}

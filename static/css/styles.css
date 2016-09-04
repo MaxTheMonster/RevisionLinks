@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: Arial, sans-serif; }
+
+h1#title {
+  text-align: center;
+  font-size: 120%;
+  text-decoration: underline; }
+
+.container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center; }
+  .container .exam {
+    display: inline-block;
+    text-decoration: none;
+    width: 20%;
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    resize: both;
+    font-size: 150%; }
+  .container .gcse {
+    background: #F37D00; }
+    .container .gcse a {
+      color: #fff9f3; }
+  .container .alevel {
+    background: #3B0CA7; }
+    .container .alevel a {
+      color: #ccb8fa; }
+
+/*# sourceMappingURL=styles.css.map */
