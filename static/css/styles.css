@@ -7,7 +7,8 @@ body {
 
 h1#title {
   text-align: center;
-  font-size: 120%;
+  font-size: 300%;
+  height: 5vh;
   text-decoration: underline; }
 
 .container {
@@ -15,22 +16,68 @@ h1#title {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 50vh;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
   vertical-align: center; }
-  .container .exam {
-    display: inline-block;
-    text-decoration: none;
+  .container .exam a {
     width: 20%;
-    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
-    padding: 2rem;
-    resize: both;
-    font-size: 150%; }
+    padding: 5vh;
+    margin: 10vw;
+    font-size: 2vh; }
   .container .gcse {
     background: #F37D00; }
     .container .gcse a {
-      color: #fff9f3; }
+      transition: 0.2s;
+      color: rgba(255, 255, 255, 0.8); }
+    .container .gcse:hover {
+      cursor: pointer; }
+      .container .gcse:hover a {
+        color: white;
+        transition: 0.1s; }
   .container .alevel {
     background: #3B0CA7; }
     .container .alevel a {
-      color: #ccb8fa; }
+      color: rgba(255, 255, 255, 0.8);
+      transition: 0.2s; }
+    .container .alevel:hover {
+      cursor: pointer; }
+      .container .alevel:hover a {
+        color: white;
+        transition: 0.1s; }
+  .container .subject {
+    margin-right: 2.5vw;
+    margin-left: 2.5vw;
+    width: 20%; }
+    .container .subject a {
+      color: rgba(255, 255, 255, 0.4);
+      height: 5vh;
+      padding: 3vh;
+      font-size: 2vh;
+      transition: 0.2s; }
+    .container .subject:hover {
+      cursor: pointer;
+      transition: 0.1s; }
+      .container .subject:hover a {
+        color: white; }
+  .container .subject-Green {
+    background: #5B9632; }
+  .container .subject-Brown {
+    background: #AA7539; }
+  .container .subject-Red {
+    background: #A8383B; }
+  .container .subject-Purple {
+    background: #522B72; }
+  .container .subject-Blue {
+    background: #2D4471; }
+  .container .subject-Light-Green {
+    background: #7A9F35; }
+  .container .subject-Magenta {
+    background: #832C65; }
+
+@media all and (min-width: 1000px) {
+  .container a {
+    padding: 3vh;
+    font-size: 1.5vh; } }
 
 /*# sourceMappingURL=styles.css.map */

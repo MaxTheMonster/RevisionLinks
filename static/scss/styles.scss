@@ -16,7 +16,8 @@ body {
 
 h1#title {
     text-align: center;
-    font-size: 120%;
+    font-size: 300%;
+    height: 5vh;
     text-decoration: underline;
 }
 
@@ -25,29 +26,104 @@ h1#title {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 50vh;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
     vertical-align: center;
 
-    .exam {
-        display: inline-block;
-        text-decoration: none;
+    .exam a {
         width: 20%;
-        text-shadow: 1px 2px 1px rgba(0,0,0,0.5);
-        padding: 2rem;
-        resize: both;
-        font-size: 150%;
+        padding: 5vh;
+        margin: 10vw;
+        font-size: 2vh;
     }
 
     .gcse {
         background: $gcse;
         a {
-            color: lighten($gcse, 50%);
+            transition: 0.2s;
+            color: rgba(255,255,255, 0.8);
+        }
+
+        &:hover {
+            a {
+                color: lighten($gcse, 100%);
+                transition: 0.1s;
+            }
+            cursor: pointer;
         }
     }
 
     .alevel {
         background: $a-level;
+
         a {
-            color: lighten($a-level, 50%);
+            color: rgba(255,255,255,0.8);
+            transition: 0.2s;
+        }
+        &:hover {
+            a {
+                color: lighten($a-level, 100%);
+                transition: 0.1s;
+            }
+            cursor: pointer;
+        }
+    }
+    .subject {
+        margin-right: 2.5vw;
+        margin-left: 2.5vw;
+        width: 20%;
+        a {
+            color: rgba(255,255,255,0.4);
+            height: 5vh;
+            padding: 3vh;
+            font-size: 2vh;
+            transition: 0.2s;
+        }
+        &:hover {
+            cursor: pointer;
+            transition: 0.1s;
+            a {
+                color: rgba(255,255,255, 1);
+            }
+        }
+    }
+
+    .subject-Green {
+        background: #5B9632;
+    }
+
+    .subject-Brown {
+        background: #AA7539;
+    }
+
+    .subject-Red {
+        background: #A8383B;
+    }
+
+    .subject-Purple {
+        background: #522B72;
+    }
+
+    .subject-Blue {
+        background: #2D4471;
+    }
+
+    .subject-Light-Green {
+        background: #7A9F35;
+    }
+
+    .subject-Magenta {
+        background: #832C65;
+    }
+
+}
+
+@media all and (min-width: 1000px) {
+    .container {
+        a {
+            padding: 3vh;
+            font-size: 1.5vh;
         }
     }
 }

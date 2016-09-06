@@ -1,3 +1,8 @@
-{% for subject in subjects %}
-    <h1>{{ subject.name }}</h1>
-{% endfor %}
+{% extends "RevisionLinks/base.html" %}
+{% block content %}
+    {% for subject in subjects %}
+        <div class="subject subject-{{ subject.color }}">
+            <a href="/gcse/{{ subject.name }}/"><h2>{{ subject.name }}</h2></a>
+        </div>
+    {% endfor %}
+{% endblock %}

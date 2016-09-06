@@ -1,7 +1,14 @@
 from django.db import models
 
+class Color(models.Model):
+    name = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.name
+
 class Subject(models.Model):
     name = models.CharField(max_length=140, unique=True)
+    color = models.ForeignKey(Color)
 
     def __str__(self):
         return self.name
