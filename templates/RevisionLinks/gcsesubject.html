@@ -2,10 +2,9 @@
 
 {% block title %}GCSE {{ subject }} |{% endblock %}
 {% block content %}
-<img src="/static/img/gcse.svg" alt="" class="page-banner">
-
+<div class="colorBlock gcse-block"></div>
 <div class="subject-resources">
-    <h1 id="subject-title">GCSE {{ subject }}</h1>
+    <h1 id="subject-title"><a href="/gcse/">GCSE {{ subject }}</a></h1>
 
     {% if error %}
         <h4 class="error">{{ error }}</h4>

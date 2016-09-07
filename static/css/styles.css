@@ -23,13 +23,12 @@ body {
   font-family: Arial, sans-serif; }
 
 h1#title {
-  color: white;
   text-align: center;
   font-size: 300%;
   height: 5vh; }
   h1#title a {
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 0.9);
     transition: 0.2s; }
     h1#title a:hover {
       text-decoration: underline;
@@ -101,15 +100,31 @@ h1#title {
     background: #832C65; }
 
 #exam-title {
-  margin: 1em;
-  font-size: 4em; }
+  font-size: 4em;
+  margin: 1em; }
+  #exam-title a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7); }
+    #exam-title a:hover {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: underline; }
 
-.page-banner {
-  animation-name: none;
+.alevel-block {
+  background: #3B0CA7;
+  border-bottom: 2vh solid #6B43C7; }
+
+.gcse-block {
+  background: #F37D00;
+  border-bottom: 2vh solid #FFA342; }
+
+.normal-block {
+  background: #273443; }
+
+.colorBlock {
+  width: 100vw;
+  height: 20vh;
   top: 0;
   z-index: -2;
-  width: 100vw;
-  overflow: hidden;
   position: absolute; }
 
 .subject-resources {
@@ -118,7 +133,8 @@ h1#title {
   .subject-resources .resources {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
-    width: 100%; }
+    width: 100%;
+    margin-top: 20vh; }
     .subject-resources .resources .resource {
       float: right;
       width: 45%;
@@ -132,10 +148,23 @@ h1#title {
           color: #004e80; }
       .subject-resources .resources .resource p {
         font-size: 200%; }
+  .subject-resources .error {
+    text-align: center;
+    font-size: 200%;
+    margin: 20vh auto;
+    color: rgba(0, 0, 0, 0.8); }
   .subject-resources #subject-title {
     width: 100%;
+    color: rgba(255, 255, 255, 0.6);
     display: block;
+    margin: 1em;
     font-size: 4em; }
+    .subject-resources #subject-title a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none; }
+      .subject-resources #subject-title a:hover {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: underline; }
 
 @media all and (min-width: 1000px) {
   .container a {

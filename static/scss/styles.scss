@@ -42,14 +42,13 @@ body {
 }
 
 h1#title {
-    color: white;
     text-align: center;
     font-size: 300%;
     height: 5vh;
 
     a {
         text-decoration: none;
-        color: rgba(0,0,0,0.7);
+        color: rgba(255,255,255,0.9);
         transition: 0.2s;
 
         &:hover {
@@ -159,18 +158,41 @@ h1#title {
 }
 
 #exam-title {
-    margin: 1em;
     font-size: 4em;
+    margin: 1em;
+    a {
+        text-decoration: none;
+        color: rgba(255,255,255,0.7);
+
+        &:hover {
+            color: rgba(255,255,255,0.9);
+            text-decoration: underline;
+        }
+    }
 }
 
-.page-banner {
-    animation-name: none;
+.alevel-block {
+    background: $a-level;
+    border-bottom: 2vh solid $a-level-lighter;
+}
+
+.gcse-block {
+    background: $gcse;
+    border-bottom: 2vh solid $gcse-lighter;
+}
+
+.normal-block {
+    background: #273443;
+}
+
+.colorBlock {
+    width: 100vw;
+    height: 20vh;
     top: 0;
     z-index: -2;
-    width: 100vw;
-    overflow: hidden;
     position: absolute;
 }
+
 .subject-resources {
     display: flex;
     flex-wrap: wrap;
@@ -179,6 +201,7 @@ h1#title {
         -webkit-flex-wrap: wrap;
         flex-wrap: wrap;
         width: 100%;
+        margin-top: 20vh;
 
         .resource {
             float: right;
@@ -202,10 +225,29 @@ h1#title {
         }
     }
 
+    .error {
+        text-align: center;
+        font-size: 200%;
+        margin: 20vh auto;
+        color: rgba(0,0,0,0.8);
+    }
+
     #subject-title {
         width: 100%;
+        color: rgba(255,255,255,0.6);
         display: block;
+        margin: 1em;
         font-size: 4em;
+
+        a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+
+            &:hover {
+                color: rgba(255,255,255,0.9);
+                text-decoration: underline;
+            }
+        }
     }
 }
 

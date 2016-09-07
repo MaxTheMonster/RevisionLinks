@@ -2,15 +2,15 @@
 
 {% block title %}A-Level {{ subject }} |{% endblock %}
 {% block content %}
-<img src="/static/img/alevel.svg" alt="" class="page-banner">
-
+<div class="colorBlock alevel-block"></div>
 <div class="subject-resources">
-    <h1 id="subject-title">A-Level {{ subject }}</h1>
+    <h1 id="subject-title"><a href="/alevel/">A-Level {{ subject }}</a></h1>
 
     {% if error %}
         <h4 class="error">{{ error }}</h4>
     {% else %}
     <div class="resources">
+
         {% for resource in resources %}
             <div class="resource">
                 <a href="{{ resource.url }}">{{ resource.name }}</a>
