@@ -2,14 +2,38 @@
   margin: 0;
   padding: 0; }
 
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0); }
+  100% {
+    opacity: 1;
+    transform: none; } }
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0); }
+  100% {
+    opacity: 1;
+    transform: none; } }
 body {
+  animation-duration: 0.5s;
+  transition-timing-function: ease-in;
+  animation-name: fadeInRight;
   font-family: Arial, sans-serif; }
 
 h1#title {
+  color: white;
   text-align: center;
   font-size: 300%;
-  height: 5vh;
-  text-decoration: underline; }
+  height: 5vh; }
+  h1#title a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    transition: 0.2s; }
+    h1#title a:hover {
+      text-decoration: underline;
+      transition: 0.3s; }
 
 .container {
   text-align: center;
@@ -50,14 +74,15 @@ h1#title {
     margin-left: 2.5vw;
     width: 20%; }
     .container .subject a {
-      color: rgba(255, 255, 255, 0.4);
+      color: rgba(255, 255, 255, 0.7);
       height: 5vh;
       padding: 3vh;
       font-size: 2vh;
       transition: 0.2s; }
     .container .subject:hover {
       cursor: pointer;
-      transition: 0.1s; }
+      transition: 0.1s;
+      box-shadow: 7px 7px 1px rgba(0, 0, 0, 0.3); }
       .container .subject:hover a {
         color: white; }
   .container .subject-Green {
@@ -74,6 +99,43 @@ h1#title {
     background: #7A9F35; }
   .container .subject-Magenta {
     background: #832C65; }
+
+#exam-title {
+  margin: 1em;
+  font-size: 4em; }
+
+.page-banner {
+  animation-name: none;
+  top: 0;
+  z-index: -2;
+  width: 100vw;
+  overflow: hidden;
+  position: absolute; }
+
+.subject-resources {
+  display: flex;
+  flex-wrap: wrap; }
+  .subject-resources .resources {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%; }
+    .subject-resources .resources .resource {
+      float: right;
+      width: 45%;
+      margin: 2.5%; }
+      .subject-resources .resources .resource h2 {
+        color: #1D3D00; }
+      .subject-resources .resources .resource a {
+        font-size: 250%;
+        color: #009bff; }
+        .subject-resources .resources .resource a:hover {
+          color: #004e80; }
+      .subject-resources .resources .resource p {
+        font-size: 200%; }
+  .subject-resources #subject-title {
+    width: 100%;
+    display: block;
+    font-size: 4em; }
 
 @media all and (min-width: 1000px) {
   .container a {
