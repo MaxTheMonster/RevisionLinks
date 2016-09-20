@@ -4,10 +4,12 @@
 
 <h1 id="exam-title"><a href="/alevel/">A-Level</a></h1>
 <div class="container alevel-page">
+    <div class="subjects">
     {% for subject in subjects %}
         <div class="subject subject-{{ subject.color }}">
             <a href="/alevel/{{ subject.name }}/"><h2>{{ subject.name }}</h2></a>
         </div>
     {% endfor %}
+    </div>
 </div>
 {% endblock %}

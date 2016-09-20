@@ -20,7 +20,7 @@ class Exam(models.Model):
         return self.name
 
 class Resource(models.Model):
-    name = models.CharField(max_length=140, unique=True)
+    name = models.CharField(max_length=140)
     url = models.URLField()
     description = models.CharField(max_length=140)
     exam = models.ForeignKey(Exam)

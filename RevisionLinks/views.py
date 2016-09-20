@@ -18,14 +18,22 @@ def alevel(request):
 
 def GCSESubject(request, subject_name):
     subject_name = subject_name.title()
-    error = ""
-    print(subject_name)
-    resources = Resource.objects.filter(subject__name=subject_name).exclude(exam=1)
-    if not resources:
-        error = "Could not find any resources for " + subject_name
+    subject = Subject.objects.filter(name=subject_name)
+    print(subject)
+    if subject:
+        print("Success")
+        error = ""
+        print(subject_name)
+        resources = Resource.objects.filter(subject__name=subject_name).exclude(exam__name=1)
+        if not resources:
+            error = "Could not find any resources for " + subject_name
+        else:
+            print(resources)
+        return render(request, "RevisionLinks/gcsesubject.html", {"resources": resources, "subject": subject_name, "error": error})
+
     else:
-        print(resources)
-    return render(request, "RevisionLinks/gcsesubject.html", {"resources": resources, "subject": subject_name, "error": error})
+        print("Wow")
+        return render(request, "RevisionLinks/404.html")
 
 def ALevelSubject(request, subject_name):
     subject_name = subject_name.title()
