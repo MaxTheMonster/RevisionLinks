@@ -65,58 +65,67 @@ h1#title {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     vertical-align: center;
 
-    .exam {
-        text-align: center;
-        padding: 10% 20% 10% 20%;
-        a {
-            text-decoration: none;
-            font-size: 5rem;
-        }
-    }
+    .exams {
+        width: 100%;
+        height: 80vh;
+        margin-top: 20%;
 
-    .gcse {
-        background: $gcse;
-        transition: 0.2s;
-        a {
-            transition: 0.2s;
-            color: rgba(255,255,255, 0.8);
-        }
+        .exam {
+            float: left;
+            width: 50%;
+            padding: 2% 0 2% 0;
 
-        &:hover {
-            box-shadow: 5px 5px 1px rgba(0,0,0,0.4);
             a {
-                text-decoration: underline;
+                font-size: 3rem;
+                text-decoration: none;
+            }
+        }
+
+        .gcse {
+            background: $gcse;
+            transition: 0.2s;
+            a {
+                transition: 0.2s;
+
+                color: rgba(255,255,255, 0.8);
+            }
+
+            &:hover {
                 box-shadow: 5px 5px 1px rgba(0,0,0,0.4);
-                color: lighten($gcse, 100%);
-                transition: 0.1s;
+                a {
+                    text-decoration: underline;
+                    box-shadow: 5px 5px 1px rgba(0,0,0,0.4);
+                    color: lighten($gcse, 100%);
+                    transition: 0.1s;
+                }
+                cursor: pointer;
             }
-            cursor: pointer;
         }
-    }
 
-    .alevel {
-        background: $a-level;
-        transition: 0.2s;
-        a {
-            color: rgba(255,255,255,0.8);
+        .alevel {
+            background: $a-level;
             transition: 0.2s;
-        }
-        &:hover {
-            box-shadow: 5px 5px 1px rgba(0,0,0,0.4);
             a {
-                text-decoration: underline;
-
-                color: lighten($a-level, 100%);
-                transition: 0.1s;
+                color: rgba(255,255,255,0.8);
+                transition: 0.2s;
             }
-            cursor: pointer;
+            &:hover {
+                box-shadow: 5px 5px 1px rgba(0,0,0,0.4);
+                a {
+                    text-decoration: underline;
+
+                    color: lighten($a-level, 100%);
+                    transition: 0.1s;
+                }
+                cursor: pointer;
+            }
         }
     }
+
     .subjects {
         height: 70vh;
         width: 100%;
@@ -196,12 +205,12 @@ h1#title {
 
 .alevel-block {
     background: $a-level;
-    border-bottom: 2vh solid $a-level-lighter;
+    // border-bottom: 2vh solid $a-level-lighter;
 }
 
 .gcse-block {
     background: $gcse;
-    border-bottom: 2vh solid $gcse-lighter;
+    // border-bottom: 2vh solid $gcse-lighter;
 }
 
 .normal-block {
@@ -211,7 +220,7 @@ h1#title {
 .colorBlock {
     margin: 0 !important;
     width: 100%;
-    height: 18%;
+    height: 20%;
     position: absolute;
     z-index: -2;
 }
@@ -222,7 +231,6 @@ h1#title {
 
     .resources {
         width: 100%;
-        margin-bottom: 0;
         margin-top: 25%;
         -webkit-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -230,7 +238,7 @@ h1#title {
         .resource {
             word-wrap: break-word;
             float: right;
-            width: 45%;
+            width: 43%;
             margin: 2.5%;
 
 
@@ -280,11 +288,26 @@ h1#title {
 }
 
 
-// @media screen and (max-width: )
+@media screen and (max-width: 2000px) {
+    .container {
+
+        .exam {
+            padding: 3rem 5rem 3rem 5rem;
+        }
+    }
+}
 
 @media screen and (max-width: 1100px) {
     h1#title {
         font-size: 4rem;
+    }
+
+    .container {
+        .exam {
+            a {
+                font-size: 1.5rem !important;
+            }
+        }
     }
 }
 
@@ -352,6 +375,14 @@ h1#title {
     }
 
     .container {
+        .exams {
+            margin-top: 50%;
+            .exam {
+
+                width: 100% !important;
+                padding: 0;
+            }
+        }
         .subjects {
             margin-top: 25%;
             .subject {
@@ -370,8 +401,8 @@ h1#title {
     }
 
     #subject-title, #exam-title {
-        font-size: 1rem;
-        color: red;
+        text-align: center;
+        font-size: 1.5em !important;
     }
 
     .subjects {

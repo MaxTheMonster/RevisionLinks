@@ -41,43 +41,47 @@ h1#title {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   vertical-align: center; }
-  .container .exam {
-    text-align: center;
-    padding: 10% 20% 10% 20%; }
-    .container .exam a {
-      text-decoration: none;
-      font-size: 5rem; }
-  .container .gcse {
-    background: #F37D00;
-    transition: 0.2s; }
-    .container .gcse a {
-      transition: 0.2s;
-      color: rgba(255, 255, 255, 0.8); }
-    .container .gcse:hover {
-      box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.4);
-      cursor: pointer; }
-      .container .gcse:hover a {
-        text-decoration: underline;
-        box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.4);
-        color: white;
-        transition: 0.1s; }
-  .container .alevel {
-    background: #3B0CA7;
-    transition: 0.2s; }
-    .container .alevel a {
-      color: rgba(255, 255, 255, 0.8);
+  .container .exams {
+    width: 100%;
+    height: 80vh;
+    margin-top: 20%; }
+    .container .exams .exam {
+      float: left;
+      width: 50%;
+      padding: 2% 0 2% 0; }
+      .container .exams .exam a {
+        font-size: 3rem;
+        text-decoration: none; }
+    .container .exams .gcse {
+      background: #F37D00;
       transition: 0.2s; }
-    .container .alevel:hover {
-      box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.4);
-      cursor: pointer; }
-      .container .alevel:hover a {
-        text-decoration: underline;
-        color: white;
-        transition: 0.1s; }
+      .container .exams .gcse a {
+        transition: 0.2s;
+        color: rgba(255, 255, 255, 0.8); }
+      .container .exams .gcse:hover {
+        box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.4);
+        cursor: pointer; }
+        .container .exams .gcse:hover a {
+          text-decoration: underline;
+          box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.4);
+          color: white;
+          transition: 0.1s; }
+    .container .exams .alevel {
+      background: #3B0CA7;
+      transition: 0.2s; }
+      .container .exams .alevel a {
+        color: rgba(255, 255, 255, 0.8);
+        transition: 0.2s; }
+      .container .exams .alevel:hover {
+        box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.4);
+        cursor: pointer; }
+        .container .exams .alevel:hover a {
+          text-decoration: underline;
+          color: white;
+          transition: 0.1s; }
   .container .subjects {
     height: 70vh;
     width: 100%;
@@ -129,12 +133,10 @@ h1#title {
       text-decoration: underline; }
 
 .alevel-block {
-  background: #3B0CA7;
-  border-bottom: 2vh solid #6B43C7; }
+  background: #3B0CA7; }
 
 .gcse-block {
-  background: #F37D00;
-  border-bottom: 2vh solid #FFA342; }
+  background: #F37D00; }
 
 .normal-block {
   background: #273443; }
@@ -142,7 +144,7 @@ h1#title {
 .colorBlock {
   margin: 0 !important;
   width: 100%;
-  height: 18%;
+  height: 20%;
   position: absolute;
   z-index: -2; }
 
@@ -151,14 +153,13 @@ h1#title {
   flex-wrap: wrap; }
   .subject-resources .resources {
     width: 100%;
-    margin-bottom: 0;
     margin-top: 25%;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap; }
     .subject-resources .resources .resource {
       word-wrap: break-word;
       float: right;
-      width: 45%;
+      width: 43%;
       margin: 2.5%; }
       .subject-resources .resources .resource h2 {
         font-size: 110%;
@@ -189,9 +190,15 @@ h1#title {
         color: rgba(255, 255, 255, 0.9);
         text-decoration: underline; }
 
+@media screen and (max-width: 2000px) {
+  .container .exam {
+    padding: 3rem 5rem 3rem 5rem; } }
 @media screen and (max-width: 1100px) {
   h1#title {
-    font-size: 4rem; } }
+    font-size: 4rem; }
+
+  .container .exam a {
+    font-size: 1.5rem !important; } }
 @media screen and (max-width: 1000px) {
   #exam-title, #subject-title {
     font-size: 2rem; }
@@ -229,6 +236,11 @@ h1#title {
   h1#title {
     font-size: 2.5rem; }
 
+  .container .exams {
+    margin-top: 50%; }
+    .container .exams .exam {
+      width: 100% !important;
+      padding: 0; }
   .container .subjects {
     margin-top: 25%; }
     .container .subjects .subject {
@@ -240,8 +252,8 @@ h1#title {
     font-size: 2rem; }
 
   #subject-title, #exam-title {
-    font-size: 1rem;
-    color: red; }
+    text-align: center;
+    font-size: 1.5em !important; }
 
   .subjects .subject a {
     font-size: 1.2rem !important; } }

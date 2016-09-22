@@ -26,7 +26,7 @@ def GCSESubject(request, subject_name):
         print(subject_name)
         resources = Resource.objects.filter(subject__name=subject_name).exclude(exam__name=1)
         if not resources:
-            error = "Could not find any resources for " + subject_name
+            error = "Could not find any resources for GCSE" + subject_name
         else:
             print(resources)
         return render(request, "RevisionLinks/gcsesubject.html", {"resources": resources, "subject": subject_name, "error": error})
@@ -41,7 +41,7 @@ def ALevelSubject(request, subject_name):
     print(subject_name)
     resources = Resource.objects.filter(subject__name=subject_name).exclude(exam=0)
     if not resources:
-        error = "Could not find any resources for " + subject_name
+        error = "Could not find any resources for A-Level " + subject_name
     else:
         print(resources)
     return render(request, "RevisionLinks/alevelsubject.html", {"resources": resources, "subject": subject_name, "error": error})
