@@ -14,7 +14,6 @@ gulp.task('css', function() {
         }))
 
         .pipe(gulp.dest('static/css/'))
-        .pipe(browserSync.stream());
 });
 
 gulp.task('js', function() {
@@ -30,7 +29,18 @@ gulp.task('img', function() {
   });
 
 gulp.task('default',function() {
-    gulp.watch('static/scss/*.scss'), ['css'];
-    gulp.watch('static/js/*.js'), ['js'];
-    gulp.watch('static/img/*.*'), ['img'];
+    styles_watcher = gulp.watch('static/scss/*.scss', ['css']);
+    styles_watcher.on("change", function(event) {
+        console.log("Compiled some Scss!")
+    });
+
+    js_watcher = gulp.watch('static/js/*.js', ['js']);
+    js_watcher.on("change", function(event) {
+        console.log("Compiled some JS!")
+    });
+
+    img_watcher = gulp.watch('static/img/*.*', ['img']);
+    img_watcher.on("change", function(event) {
+        console.log("Optimized some images!")
+    });
 });

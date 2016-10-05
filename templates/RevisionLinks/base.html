@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-{% load static %}
+{% load staticfiles %}
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WBZHQK');</script>
+<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %} Maximum Revision</title>
     <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.ico" %}"/>
-
-
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBZHQK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <style>
 .alevel-block {
     background: #3B0CA7;
     border-bottom: 2vh solid #6B43C7;
 }
-
 .gcse-block {
     background: #F37D00;
     border-bottom: 2vh solid #FFA342;
 }
-
 .normal-block {
     background: #273443;
 }
-
 .colorBlock {
     margin: 0 !important;
     width: 100%;
@@ -39,16 +45,15 @@
     {% block content %}
     {% endblock %}
     <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
-    <script>
+    <!-- <script>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-53354801-5']);
     _gaq.push(['_trackPageview']);
-
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
-    </script>
+    </script> -->
 </body>
 </html>

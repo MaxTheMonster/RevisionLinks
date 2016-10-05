@@ -214,29 +214,52 @@ h1#title {
         -webkit-flex-wrap: wrap;
         flex-wrap: wrap;
 
-        .resource {
-            word-wrap: break-word;
-            float: right;
-            width: 43%;
-            margin: 2.5%;
+        .resource_category {
+            width: 95%;
+            float: left;
+            margin: 0 auto;
+            margin-bottom: 5%;
+            border-bottom: 1px solid #273443;
 
-
-            h2 {
-                font-size: 110%;
-                color: #1D3D00;
+            h1 {
+                margin: 2.5%;
+                font-size: 4rem;
+                color: #273443;
             }
-            a {
-                font-size: 250%;
-                color: #009bff;
 
-                &:hover {
-                    color: darken(#009bff, 25%);
+            p {
+                margin: 2.5%;
+                font-size: 2rem;
+            }
+
+            .resource {
+                word-wrap: break-word;
+                float: left;
+                width: 43%;
+                margin: 2.5%;
+
+
+                h2 {
+                    font-size: 1.5rem;
+                    color: #1D3D00;
+                }
+
+                a {
+                    font-size: 1.9rem;
+                    color: #009bff;
+
+                    &:hover {
+                        color: darken(#009bff, 25%);
+                    }
+                }
+                p {
+                    margin: 1% 0 0 0;
+                    font-size: 1.5rem;
                 }
             }
-            p {
-                font-size: 200%;
-            }
+
         }
+
     }
 
     .error {

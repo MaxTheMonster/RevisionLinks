@@ -10,13 +10,48 @@
         <h4 class="error">{{ error }}</h4>
     {% else %}
     <div class="resources">
-        {% for resource in resources %}
-            <div class="resource">
-                <a href="{{ resource.url }}">{{ resource.name }}</a>
-                <h2>{{ resource.url }}</h2>
-                <p>{{ resource.description }}</p>
-            </div>
-        {% endfor %}
+        {% if website_resources %}
+        <div class="website_resources resource_category">
+            <h1>Websites</h1>
+            <p>Websites tend to provide a lot of useful help, I've collated a bunch of websites here for you to revise GCSE {{ subject }} with. They can contain anything from practice questions to the entire syllabus for your exam!</p>
+            {% for resource in website_resources %}
+                <div class="resource">
+                    <a href="{{ resource.url }}">{{ resource.name }}</a>
+                    <h2>{{ resource.url }}</h2>
+                    <p>{{ resource.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if video_resources %}
+        <div class="video_resources resource_category">
+            <h1>Videos</h1>
+            <p>Here I have many, primarily YouTube channels to help with your learning. These can be very useful, especially if you prefer learning from videos rather than reading websites or books. These are all very informative in my opinion and usually contain similar content to that in a website or book.</p>
+
+            {% for resource in video_resources %}
+                <div class="resource">
+                    <a href="{{ resource.url }}">{{ resource.name }}</a>
+                    <h2>{{ resource.url }}</h2>
+                    <p>{{ resource.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if book_resources %}
+        <div class="book_resources resource_category">
+            <h1>Books</h1>
+            <p>Books are a great way to learn when on the bus or at school where you likely don't have an Internet connection. These can often be quite pricey, but I would definitely reccommend books for some quick revising when you just can't watch a video or have a look at a website. Sometimes these books also contain various practice papers, and writing things down nearly always tends to be helpful!</p>
+
+            {% for resource in book_resources %}
+                <div class="resource">
+                    <a href="{{ resource.url }}">{{ resource.name }}</a>
+                    <h2>{{ resource.url }}</h2>
+                    <p>{{ resource.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
     </div>
     {% endif %}
 </div>
