@@ -1,0 +1,17 @@
+{% extends "RevisionLinks/base.html" %}
+
+{% block title %}A-Level Past Papers |{% endblock %}
+
+{% block content %}
+<div class="colorBlock gcse-block"></div>
+<h1 id="exam-title"><a href="/gcse/">GCSE</a></h1>
+<div class="container">
+    <div class="subjects">
+    {% for subject in subjects %}
+        <div class="subject subject-{{ subject.color }}">
+            <a href="/papers/alevel/{{ subject.name }}/"><h2>{{ subject.name }}</h2></a>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

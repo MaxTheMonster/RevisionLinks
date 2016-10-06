@@ -129,7 +129,7 @@ h1#title {
     .subjects {
         height: 70vh;
         width: 100%;
-        margin-top: calc(20% + 2.2%);
+        margin-top: 20vh;
 
         .subject {
             float: left;
@@ -208,9 +208,32 @@ h1#title {
     display: flex;
     flex-wrap: wrap;
 
+    .pastpaperslink {
+        margin: 22vh auto 0 auto;
+        width: 50%;
+        border-radius: 3px;
+        background: #273443;
+        text-align: center;
+        padding: 1.5% 0;
+
+        a {
+            color: rgba(255,255,255,0.7);
+            font-size: 3rem;
+        }
+
+        &:hover {
+            box-shadow: 5px 5px 1px rgba(0,0,0,0.4);
+            cursor: pointer;
+
+            a {
+                text-decoration: underline;
+                color: rgba(255,255,255, 1);
+                transition: 0.1s;
+            }
+        }
+    }
     .resources {
         width: 100%;
-        margin-top: 20%;
         -webkit-flex-wrap: wrap;
         flex-wrap: wrap;
 
@@ -357,15 +380,23 @@ h1#title {
     }
 
     .subject-resources {
+        .pastpaperslink {
+            width: 90%;
+
+            a {
+                font-size: 2.5rem;
+            }
+        }
         .resources {
-            margin-top: 40%;
-            .resource {
-                text-align: center;
-                padding: 0;
-                margin: 0;
-                float: none;
-                width: 100%;
-                margin-bottom: 5%;
+
+            .resource_category {
+                .resource {
+                    text-align: center;
+                    padding: 0;
+                    margin: 0;
+                    width: 100%;
+                    margin-bottom: 5%;
+                }
             }
         }
     }
@@ -407,10 +438,36 @@ h1#title {
         font-size: 1.5em !important;
     }
 
+    .pastpaperslink {
+        a {
+            font-size: 2rem !important;
+        }
+    }
+    .resources {
+        .resource_category {
+            h1 {
+                font-size: 2rem !important;
+            }
+            p {
+                font-size: 1.5rem !important;
+            }
+        }
+    }
+
     .subjects {
         .subject {
             a {
                 font-size: 1.2rem !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .resources {
+        .resource_category {
+            p {
+                font-size: 1.2rem !important
             }
         }
     }

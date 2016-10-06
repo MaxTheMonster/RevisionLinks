@@ -77,3 +77,11 @@ def ALevelSubject(request, subject_name):
     else:
         print("Wow")
         return render(request, "RevisionLinks/404.html")
+
+
+def gcsePastPapers(request, subject_name):
+    return render(request, "RevisionLinks/gcsepastpapers.html", {"subjects": subjects})
+
+
+def alevelPastPapers(request):
+    return render(request, "RevisionLinks/alevelpastpapers.html", {"subjects": subjects})
