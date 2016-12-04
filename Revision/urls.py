@@ -20,6 +20,6 @@ from RevisionLinks import views
 urlpatterns = [
     url(r'^$', views.index, name="index"),
     url(r'^papers/gcse/$', views.gcsePastPapers, name="gcsepastpapers"),
-    url(r'^gcse/(?P<subject_name>[-\w.]+)/', views.GCSESubject, name="gcsesubject"),
+    url(r'^(?P<subject_name>[-\w.]+)/', views.GCSESubject, name="gcsesubject"),
     url(r'^admin/', admin.site.urls),
 ]

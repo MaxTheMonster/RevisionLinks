@@ -1,28 +1,31 @@
 {% extends "RevisionLinks/base.html" %}
 
-{% block title %}A-Level {{ subject }} |{% endblock %}
+{% block title %}GCSE {{ subject }} |{% endblock %}
+{% block headertext %}- GCSE {{ subject }}{% endblock %}
 {% block content %}
-<div class="colorBlock gcse-block"></div>
-<div class="subject-resources">
-    <h1 id="subject-title"><a href="/alevel/">A-Level</a> {{ subject }}</h1>
-
+<div class="container">
+    <!-- <div class="pastpaperslink">
+        <a href="/papers/gcse/{{ subject }}/">Past Papers</a>
+    </div> -->
     {% if error %}
         <h4 class="error">{{ error }}</h4>
     {% else %}
+
     <div class="resources">
         {% if website_resources %}
         <div class="website_resources resource_category">
             <h1>Websites</h1>
             <p>Websites tend to provide a lot of useful help, I've collated a bunch of websites here for you to revise GCSE {{ subject }} with. They can contain anything from practice questions to the entire syllabus for your exam!</p>
+
             {% for resource in website_resources %}
                 <div class="resource">
                     <a href="{{ resource.url }}">{{ resource.name }}</a>
                     <h2>{{ resource.url }}</h2>
-                    <p>{{ resource.description }}</p>
                 </div>
             {% endfor %}
         </div>
         {% endif %}
+
         {% if video_resources %}
         <div class="video_resources resource_category">
             <h1>Videos</h1>
@@ -32,7 +35,6 @@
                 <div class="resource">
                     <a href="{{ resource.url }}">{{ resource.name }}</a>
                     <h2>{{ resource.url }}</h2>
-                    <p>{{ resource.description }}</p>
                 </div>
             {% endfor %}
         </div>
@@ -47,7 +49,6 @@
                 <div class="resource">
                     <a href="{{ resource.url }}">{{ resource.name }}</a>
                     <h2>{{ resource.url }}</h2>
-                    <p>{{ resource.description }}</p>
                 </div>
             {% endfor %}
         </div>
