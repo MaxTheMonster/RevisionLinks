@@ -3,13 +3,13 @@
 
 
 // Variables
-
 $main-color: #e8340b;
-$secondary-color: #e8130c;
-$tershiary-color: #0e5d75;
+$secondary-color: #5E3ADB;
+$tershiary-color: #EB6D00;
+
+$bp-1: 600px;
 
 // Clearfix
-
 * {
   margin: 0;
   padding: 0;
@@ -25,13 +25,14 @@ h1, h2 {
 
 p {
   font-size: 12px;
+  word-spacing: 0.2em;
+  line-height: 1.2;
   font-family: 'Raleway', sans-serif;
 }
 
 a {
   font-family: 'Raleway', sans-serif;
-  color: $secondary-color;
-  font-size: 12px;
+  color: $tershiary-color;
   text-decoration: none;
 
   &:hover {
@@ -55,15 +56,25 @@ a {
 }
 
 .container {
-  h1#header {
+  #header {
     margin: 2.5%;
+
+    h1 {
+      margin-bottom: 0.5em;
+    }
+
+    #description {
+      width: 70%;
+      font-size: 15px;
+
+      @media screen and (max-width: $bp-1) {
+        width: 100%;
+      }
+    }
+
+
   }
-  #description {
-    margin: 0.5% 2.5%;
-    width: 70%;
-    font-size: 15px;
-    max-width: 90%;
-  }
+
   .subjects {
     display: flex;
     justify-content: center;
