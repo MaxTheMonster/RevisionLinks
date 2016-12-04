@@ -2,6 +2,7 @@ from django.shortcuts import render, render_to_response
 from .models import Subject, Resource
 from django.template import RequestContext
 from django.db import connection
+from django.http import Http404
 
 
 def handler404(request):
@@ -25,10 +26,9 @@ def index(request):
 def GCSESubject(request, subject_name):
     subject_name = subject_name.title()
     subject = Subject.objects.filter(name=subject_name)
-    print(subject)
+
     if subject:
         error = ""
-        print(subject_name)
         website_resources = Resource.objects.filter(subject__name=subject_name, type=1).exclude(exam__name=1)
         video_resources = Resource.objects.filter(subject__name=subject_name, type=2).exclude(exam__name=1)
         book_resources = Resource.objects.filter(subject__name=subject_name, type=3).exclude(exam__name=1)
@@ -37,10 +37,8 @@ def GCSESubject(request, subject_name):
             error = "Could not find any resources for GCSE " + subject_name
 
         return render(request, "RevisionLinks/subject.html", {"resources": resources, "subject": subject_name, "error": error, "video_resources": video_resources, "website_resources": website_resources, "book_resources": book_resources})
-
     else:
-        return render(request, "404.html")
-
+        raise Http404
 
 def gcsePastPapers(request, subject_name):
     return render(request, "RevisionLinks/gcsepastpapers.html", {"subjects": subjects})
