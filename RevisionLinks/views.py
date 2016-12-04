@@ -19,7 +19,8 @@ def handler500(request):
 
 
 def index(request):
-    return render(request, "RevisionLinks/index.html")
+    subjects = Subject.objects.all().order_by("name")
+    return render(request, "RevisionLinks/index.html", {"subjects": subjects})
 
 
 def gcse(request):

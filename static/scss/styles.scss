@@ -1,472 +1,84 @@
-$gcse-lighter: #FFA342;
-$gcse: #F37D00;
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Oxygen|Raleway');
 
-$a-level-lighter: #6B43C7;
-$a-level: #3B0CA7;
 
+// Variables
+
+$main-color: #e8340b;
+$secondary-color: #e8130c;
+$tershiary-color: #0e5d75;
+
+// Clearfix
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
+// General styles
 
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
+h1, h2 {
+  font-size: 17px;
+  font-family: 'Oxygen', sans-serif;
 }
 
-body {
-    animation-duration: 0.5s;
-    transition-timing-function: ease-in;
-    animation-name: fadeInRight;
-    font-family: Arial, sans-serif;
+p {
+  font-size: 12px;
+  font-family: 'Raleway', sans-serif;
 }
 
-h1#title {
-    text-align: center;
-    font-size: 7rem;
-    top: 0;
-    width: 100%;
-    position: absolute;
+a {
+  font-family: 'Raleway', sans-serif;
+  color: $secondary-color;
+  font-size: 12px;
+  text-decoration: none;
 
-    a {
-        text-decoration: none;
-        color: rgba(255,255,255,0.9);
-        transition: 0.2s;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 
-        &:hover {
-            text-decoration: underline;
-            transition: 0.3s;
-        }
-    }
+// Main styles
 
+#title {
+  min-height: 15%;
+  text-align: center;
+  padding: 1em;
+  background: $main-color;
+
+  a {
+    font-weight: bolder;
+    color: white;
+    font-size: 30px;
+  }
 }
 
 .container {
-    text-align: center;
+  .subjects {
     display: flex;
     justify-content: center;
-    align-items: center;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    vertical-align: center;
-
-    .exams {
-        width: 100%;
-        height: 80vh;
-        margin-top: 20%;
-
-        .exam {
-            float: left;
-            width: 50%;
-            padding: 2% 0 2% 0;
-
-            a {
-                font-size: 3rem;
-                text-decoration: none;
-            }
-        }
-
-        .gcse {
-            background: $gcse;
-            transition: 0.2s;
-            a {
-                transition: 0.2s;
-
-                color: rgba(255,255,255, 0.8);
-            }
-
-            &:hover {
-                box-shadow: 5px 5px 1px rgba(0,0,0,0.4);
-                a {
-                    text-decoration: underline;
-                    box-shadow: 5px 5px 1px rgba(0,0,0,0.4);
-                    color: lighten($gcse, 100%);
-                    transition: 0.1s;
-                }
-                cursor: pointer;
-            }
-        }
-
-        .alevel {
-            background: $a-level;
-            transition: 0.2s;
-            a {
-                color: rgba(255,255,255,0.8);
-                transition: 0.2s;
-            }
-            &:hover {
-                box-shadow: 5px 5px 1px rgba(0,0,0,0.4);
-                a {
-                    text-decoration: underline;
-
-                    color: lighten($a-level, 100%);
-                    transition: 0.1s;
-                }
-                cursor: pointer;
-            }
-        }
-    }
-
-    .subjects {
-        height: 70vh;
-        width: 100%;
-        margin-top: 20vh;
-
-        .subject {
-            float: left;
-            margin: 0.2%;
-            width: 24.6%;
-            padding: 2% 0 2% 0;
-
-            a {
-                text-decoration: none;
-                color: rgba(255,255,255,0.7);
-                height: 5vh;
-                padding: 3vh;
-                font-size: 2rem;
-                transition: 0.2s;
-            }
-            &:hover {
-                text-decoration: underline;
-                cursor: pointer;
-                transition: 0.1s;
-                box-shadow: 5px 5px 1px rgba(0,0,0,0.4);
-                a {
-                    color: rgba(255,255,255,1);
-                }
-            }
-        }
-
-        .subject-Green {
-            background: #5B9632;
-        }
-
-        .subject-Brown {
-            background: #AA7539;
-        }
-
-        .subject-Red {
-            background: #A8383B;
-        }
-
-        .subject-Purple {
-            background: #522B72;
-        }
-
-        .subject-Blue {
-            background: #2D4471;
-        }
-
-        .subject-Light-Green {
-            background: #7A9F35;
-        }
-
-        .subject-Magenta {
-            background: #832C65;
-        }
-    }
-}
-
-#exam-title {
-    font-size: 4em;
-    margin: 1em;
-    top: 5%;
-    position: absolute;
-
-    a {
-        text-decoration: none;
-        color: rgba(255,255,255,0.7);
-
-        &:hover {
-            color: rgba(255,255,255,0.9);
-            text-decoration: underline;
-        }
-    }
-}
-
-
-.subject-resources {
-    display: flex;
     flex-wrap: wrap;
 
-    .pastpaperslink {
-        margin: 22vh auto 0 auto;
-        width: 50%;
-        border-radius: 3px;
-        background: #273443;
-        text-align: center;
-        padding: 1.5% 0;
+    .subject {
+      max-width: 100%;
+      flex-grow: 1;
+      min-width: 20%;
+      margin: 2.5%;
+      text-align: center;
+      padding: 1em;
+      background: $tershiary-color;
+      transition: 0.2s;
 
-        a {
-            color: rgba(255,255,255,0.7);
-            font-size: 3rem;
-        }
+      &:hover {
+        box-shadow: -2px -2px 0px rgba(0,0,0,0.6);
+        flex-grow: 2;
+        transition: 0.5s;
+      }
 
-        &:hover {
-            box-shadow: 5px 5px 1px rgba(0,0,0,0.4);
-            cursor: pointer;
-
-            a {
-                text-decoration: underline;
-                color: rgba(255,255,255, 1);
-                transition: 0.1s;
-            }
-        }
+      a {
+        color: white;
+        font-size: 22px;
+      }
     }
-    .resources {
-        width: 100%;
-        -webkit-flex-wrap: wrap;
-        flex-wrap: wrap;
-
-        .resource_category {
-            width: 95%;
-            float: left;
-            margin: 0 auto;
-            margin-bottom: 10%;
-            border-bottom: 1px solid #273443;
-
-            h1 {
-                margin: 2.5%;
-                font-size: 4rem;
-                color: #273443;
-            }
-
-            p {
-                margin: 2.5%;
-                font-size: 2rem;
-            }
-
-            .resource {
-                word-wrap: break-word;
-                float: left;
-                width: 43%;
-                margin-bottom: 10%;
-
-
-                h2 {
-                    font-size: 1.5rem;
-                    color: #1D3D00;
-                }
-
-                a {
-                    font-size: 1.9rem;
-                    color: #009bff;
-
-                    &:hover {
-                        color: darken(#009bff, 25%);
-                    }
-                }
-                p {
-                    margin: 1% 0 0 0;
-                    font-size: 1.5rem;
-                }
-            }
-
-        }
-
-    }
-
-    .error {
-        text-align: center;
-        font-size: 200%;
-        margin: 20vh auto;
-        color: rgba(0,0,0,0.8);
-    }
-
-    #subject-title {
-        color: rgba(255,255,255,0.6);
-        display: block;
-        top: 5%;
-        position: absolute;
-        margin: 1em;
-        font-size: 3rem;
-
-        a {
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-
-            &:hover {
-                color: rgba(255,255,255,0.9);
-                text-decoration: underline;
-            }
-        }
-    }
-}
-
-
-@media screen and (max-width: 2000px) {
-    .container {
-
-        .exam {
-            padding: 3rem 5rem 3rem 5rem;
-        }
-    }
-}
-
-@media screen and (max-width: 1100px) {
-    h1#title {
-        font-size: 4rem;
-    }
-
-    .container {
-        .exam {
-            a {
-                font-size: 1.5rem !important;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    #exam-title, #subject-title {
-        font-size: 2rem;
-    }
-
-    .container {
-        .subjects {
-            .subject {
-                width: 49.6%;
-            }
-        }
-    }
-
-
-}
-
-@media screen and (max-width: 800px) and (orientation: landscape) {
-    h1#title {
-        font-size: 2.5rem;
-    }
-    .container {
-        .exam a {
-            width: 50%;
-            margin: 0;
-            padding: 0;
-            font-size: 5vw;
-        }
-
-        .subjects {
-            margin-top: 40%;
-        }
-    }
-
-    #exam-title {
-        margin: 0.5em;
-    }
-}
-
-@media screen and (max-width: 775px) {
-    h1#title {
-        font-size: 3rem;
-    }
-
-    .subject-resources {
-        .pastpaperslink {
-            width: 90%;
-
-            a {
-                font-size: 2.5rem;
-            }
-        }
-        .resources {
-
-            .resource_category {
-                .resource {
-                    padding: 0;
-                    text-align: center;
-                    width: 100%;
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 510px) {
-    h1#title {
-        font-size: 2.5rem;
-    }
-
-    .container {
-        .exams {
-            margin-top: 50%;
-            .exam {
-
-                width: 100% !important;
-                padding: 0;
-            }
-        }
-        .subjects {
-            margin-top: 25%;
-            .subject {
-                float: none;
-                margin: 0;
-                width: 100%;
-            }
-        }
-    }
-
-}
-
-@media screen and (max-width: 450px) {
-    h1#title {
-        font-size: 2rem;
-    }
-
-    #subject-title, #exam-title {
-        text-align: center;
-        font-size: 1.5em !important;
-    }
-
-    .pastpaperslink {
-        a {
-            font-size: 2rem !important;
-        }
-    }
-    .resources {
-        .resource_category {
-            h1 {
-                font-size: 2rem !important;
-            }
-            p {
-                font-size: 1.5rem !important;
-            }
-        }
-    }
-
-    .subjects {
-        .subject {
-            a {
-                font-size: 1.2rem !important;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 350px) {
-    .resources {
-        .resource_category {
-            p {
-                font-size: 1.2rem !important
-            }
-        }
-    }
+  }
 }

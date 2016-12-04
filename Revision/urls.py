@@ -19,13 +19,7 @@ from RevisionLinks import views
 
 urlpatterns = [
     url(r'^$', views.index, name="index"),
-    url(r'^gcse/$', views.gcse, name="gcse"),
-    url(r'^alevel/$', views.alevel, name="alevel"),
     url(r'^papers/gcse/$', views.gcsePastPapers, name="gcsepastpapers"),
-    url(r'^papers/alevel/$', views.alevelPastPapers, name="alevelpastpapers"),
-    url(r'^alevel/(?P<subject_name>[-\w.]+)/', views.ALevelSubject, name="alevelsubject"),
     url(r'^gcse/(?P<subject_name>[-\w.]+)/', views.GCSESubject, name="gcsesubject"),
-    # url(r'^papers/gcse/(?P<subject_name>[-\w.]+)/', views.gcsePastPapers, name="gcsepastpapers"),
-    # url(r'^papers/alevel/(?P<subject_name>[-\w.]+)/', views.alevelPastPapers, name="alevelpastpapers"),
     url(r'^admin/', admin.site.urls),
 ]
