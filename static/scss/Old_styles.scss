@@ -95,6 +95,7 @@ h1#title {
             }
 
             &:hover {
+              cursor: pointer;
                 box-shadow: 5px 5px 1px rgba(0,0,0,0.4);
                 a {
                     text-decoration: underline;
@@ -102,7 +103,6 @@ h1#title {
                     color: lighten($gcse, 100%);
                     transition: 0.1s;
                 }
-                cursor: pointer;
             }
         }
 

@@ -42,6 +42,13 @@ a {
 
 // Main styles
 
+
+.error {
+  font-family: 'Raleway';
+  text-align: center;
+  margin: 2.5%;
+}
+
 #title {
   min-height: 15%;
   text-align: center;
@@ -109,13 +116,12 @@ a {
         font-size: 22px;
       }
     }
+
+    .self-subject {
+      background: $secondary-color;
+    }
   }
 
-  .error {
-    font-family: 'Raleway';
-    text-align: center;
-    margin: 2.5%;
-  }
 
   .resources {
     margin: 2.5%;
@@ -133,7 +139,7 @@ a {
       }
 
       .resource {
-        margin-top: 5%;
+        margin-top: 2%;
 
         a {
           font-size: 30px;
@@ -148,11 +154,11 @@ a {
       @media screen and (max-width: $bp-1) {
         .resource {
           a {
-            font-size: 25px;
+            font-size: 23px;
           }
 
           h2 {
-            font-size: 20px;
+            font-size: 18px;
           }
         }
       }

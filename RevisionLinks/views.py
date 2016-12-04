@@ -39,7 +39,7 @@ def GCSESubject(request, subject_name):
         return render(request, "RevisionLinks/subject.html", {"resources": resources, "subject": subject_name, "error": error, "video_resources": video_resources, "website_resources": website_resources, "book_resources": book_resources})
 
     else:
-        return render(request, "RevisionLinks/404.html")
+        return render(request, "404.html")
 
 
 def gcsePastPapers(request, subject_name):
