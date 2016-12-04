@@ -27,12 +27,6 @@ def gcse(request):
     print("YO")
     return render(request, "RevisionLinks/gcse.html", {"subjects": subjects})
 
-
-def alevel(request):
-    subjects = Subject.objects.all().order_by("name")
-    return render(request, "RevisionLinks/alevel.html", {"subjects": subjects})
-
-
 def GCSESubject(request, subject_name):
     subject_name = subject_name.title()
     subject = Subject.objects.filter(name=subject_name)
@@ -56,32 +50,5 @@ def GCSESubject(request, subject_name):
         return render(request, "RevisionLinks/404.html")
 
 
-def ALevelSubject(request, subject_name):
-    subject_name = subject_name.title()
-    subject = Subject.objects.filter(name=subject_name)
-    print(subject)
-    if subject:
-        print("Success")
-        error = ""
-        print(subject_name)
-        website_resources = Resource.objects.filter(subject__name=subject_name, type=1).exclude(exam__name=0)
-        video_resources = Resource.objects.filter(subject__name=subject_name, type=2).exclude(exam__name=0)
-        book_resources = Resource.objects.filter(subject__name=subject_name, type=3).exclude(exam__name=0)
-        resources = Resource.objects.filter(subject__name=subject_name).exclude(exam__name=0)
-        if not resources:
-            error = "Could not find any resources for GCSE " + subject_name
-        else:
-            print(resources)
-        return render(request, "RevisionLinks/alevelsubject.html", {"resources": resources, "subject": subject_name, "error": error, "video_resources": video_resources, "website_resources": website_resources, "book_resources": book_resources})
-
-    else:
-        print("Wow")
-        return render(request, "RevisionLinks/404.html")
-
-
 def gcsePastPapers(request, subject_name):
     return render(request, "RevisionLinks/gcsepastpapers.html", {"subjects": subjects})
-
-
-def alevelPastPapers(request):
-    return render(request, "RevisionLinks/alevelpastpapers.html", {"subjects": subjects})

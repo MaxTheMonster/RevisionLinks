@@ -241,7 +241,7 @@ h1#title {
             width: 95%;
             float: left;
             margin: 0 auto;
-            margin-bottom: 5%;
+            margin-bottom: 10%;
             border-bottom: 1px solid #273443;
 
             h1 {
@@ -259,7 +259,7 @@ h1#title {
                 word-wrap: break-word;
                 float: left;
                 width: 43%;
-                margin: 2.5%;
+                margin-bottom: 10%;
 
 
                 h2 {
@@ -391,11 +391,9 @@ h1#title {
 
             .resource_category {
                 .resource {
-                    text-align: center;
                     padding: 0;
-                    margin: 0;
+                    text-align: center;
                     width: 100%;
-                    margin-bottom: 5%;
                 }
             }
         }
