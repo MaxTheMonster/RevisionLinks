@@ -18,7 +18,8 @@ $tershiary-color: #0e5d75;
 // General styles
 
 h1, h2 {
-  font-size: 17px;
+  font-size: 25px;
+  font-weight: bolder;
   font-family: 'Oxygen', sans-serif;
 }
 
@@ -54,6 +55,15 @@ a {
 }
 
 .container {
+  h1#header {
+    margin: 2.5%;
+  }
+  #description {
+    margin: 0.5% 2.5%;
+    width: 70%;
+    font-size: 15px;
+    max-width: 90%;
+  }
   .subjects {
     display: flex;
     justify-content: center;
@@ -67,12 +77,14 @@ a {
       text-align: center;
       padding: 1em;
       background: $tershiary-color;
-      transition: 0.2s;
+      transition: 0.2s ease-out;
 
       &:hover {
-        box-shadow: -2px -2px 0px rgba(0,0,0,0.6);
+        text-decoration: underline;
+        cursor: pointer;
+        box-shadow: inset 0 0 2px rgba(black, 0.1);
         flex-grow: 2;
-        transition: 0.5s;
+        transition: 0.3s ease-in;
       }
 
       a {
