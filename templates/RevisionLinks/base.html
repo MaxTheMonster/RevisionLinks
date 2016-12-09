@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="charset=UTF-8" />
-    <meta name="description" content="Maximum Revision contains all of the revision that you will need for GCSE and A-Level revision. We have lists of revision websites, videos and books for your different learning style.">
+    <meta name="description" content="Maximum Revision contains all of the revision that you will need for GCSE revision. We have lists of revision websites, videos and books for your different learning style.">
     <meta name="author" content="Max Ungless">
-    <meta name="keywords" content="gcse, a-level, revision, maximum revision">
+    <meta name="keywords" content="gcse, revision, maximum revision">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %} Maximum Revision</title>
@@ -19,5 +19,20 @@
 
     {% block content %}
     {% endblock %}
+
+<script>
+if ('serviceWorker' in navigator) {
+window.addEventListener('load', function() {
+  navigator.serviceWorker.register('/static/js/sw.js').then(function(registration) {
+    // Registration was successful
+    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+  }).catch(function(err) {
+    // registration failed :(
+    console.log('ServiceWorker registration failed: ', err);
+  });
+});
+}
+
+</script>
 </body>
 </html>

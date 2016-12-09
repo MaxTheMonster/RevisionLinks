@@ -26,7 +26,7 @@ gulp.task('img', function() {
   gulp.src('static/img/*.*')
     .pipe(imageminOptipng({optimizationLevel: 3})())
     .pipe(gulp.dest('static/img'));
-  });
+});
 
 gulp.task('default',function() {
     styles_watcher = gulp.watch('static/scss/*.scss', ['css']);

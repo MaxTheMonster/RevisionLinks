@@ -27,6 +27,7 @@ p {
   font-size: 15px;
   word-spacing: 0.2em;
   line-height: 1.2;
+  margin-top: 0.5em;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -40,8 +41,21 @@ a {
   }
 }
 
+ol {
+  margin-top: 1.5em;
+
+  li {
+    margin-top: 1em;
+    font-family: 'Raleway', sans-serif;
+    list-style-type:decimal;
+  }
+}
+
 // Main styles
 
+.margin {
+  margin: 2.5%;
+}
 
 .error {
   font-family: 'Raleway';
@@ -63,7 +77,8 @@ a {
     font-weight: bolder;
 
     &:hover {
-      text-shadow: 1px 1px rgba(0,0,0,0.2);
+      text-decoration: underline;
+      text-shadow:2px 1px rgba(0,0,0,0.2);
       transition: 0.3s;
     }
   }
@@ -113,7 +128,12 @@ a {
 
       a {
         color: white;
+        font-family: 'Oxygen';
         font-size: 22px;
+      }
+
+      @media screen and (max-width: $bp-1) {
+        min-width: 33%;
       }
     }
 

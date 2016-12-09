@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from RevisionLinks import views
+from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^$', views.index, name="index"),
+    url(r'^tips/', TemplateView.as_view(template_name="RevisionLinks/tips.html")),
     url(r'^papers/gcse/$', views.gcsePastPapers, name="gcsepastpapers"),
     url(r'^(?P<subject_name>[-\w.]+)/', views.GCSESubject, name="gcsesubject"),
     url(r'^admin/', admin.site.urls),
